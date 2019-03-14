@@ -85,9 +85,10 @@ namespace LIDAR
             NumDay = (int)(86400 / mConfig.ScanInterval);
 
             Console.WriteLine("The width is {0},\r\nThe length is {1}, \r\nEvery scan would last {2} seconds.\r\nEvery {3} seconds will scan one time.\r\nThe segmentation is {4}\r\n", mConfig.width, mConfig.length, mConfig.ScanPeriod, mConfig.ScanInterval, mConfig.segmentation);
-                       
+            
             //Check and create directory
             ret = InitialDir(mConfig.SaveDir);
+            ret = InitialDir(System.Environment.CurrentDirectory + "\\ConvertedDatabase");
 
             //Initiate the serial port
             ret = SerialInit(mConfig.COM,mConfig.Baudrate);
